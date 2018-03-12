@@ -1,0 +1,19 @@
+{%extends '@CPCocoloc/Annonce/base.html.twig'%}
+
+{%block title%}
+{{'Login'|trans}}
+{%endblock%}
+
+{%block body%}
+<h3>Créer un compte </h3>
+  {% for key, messages in app.session.flashbag.all() %}
+    {% for message in messages %}
+      <div class="alert alert-{{ key }}">
+        {{ message|trans({}, 'FOSUserBundle') }}
+      </div>
+    {% endfor %}
+  {% endfor %}
+  {% block fos_user_content %}
+  {% endblock fos_user_content %}
+
+{%endblock%}

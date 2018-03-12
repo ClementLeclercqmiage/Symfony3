@@ -1,0 +1,73 @@
+{%extends '@CPCocoloc/Annonce/base.html.twig'%}
+
+
+{%block title%}
+	{{'Annonce'|trans}} 
+{%endblock%}
+
+ {%block body%}
+ <div class="container">
+    		<div class="row">
+    			<h3>{{ Annonce.titre|trans}} </h3>
+    		</div>
+			<div class="row">
+			
+				<table class="table table-striped table-bordered">
+		              <thead>
+		                <tr>
+		                  <th>{{'Titre'|trans}}</th>
+		                  <th>{{'Date'|trans}}</th>
+		                  <th>{{'Categorie'|trans}}</th>
+		                  <th>{{'Ville'|trans}}</th>
+		                  <th>{{'Nombre de places'|trans}}</th>
+		                  <th>{{'Prix'|trans}}</th>
+
+		                </tr>
+		              </thead>
+		              <tbody>
+					<tr>
+						<td> {{Annonce.titre}}</td>
+						<td> {{Annonce.datePublication|date}}</td>
+						<td> {{Annonce.categorie}}</td>
+						<td> {{Annonce.ville}}</td>
+						<td> {{Annonce.nbPlace}}</td>
+						<td> {{Annonce.prix}}</td>
+					</tr>
+				
+					</tbody>
+	            </table>
+
+
+	            <table class="table table-striped table-bordered">
+		              <thead>
+		                <tr>
+		                  <th>{{'Titre'|trans}}</th>
+		                  <th>{{'Contenu'|trans}}</th>
+		                  <th>{{'Date'|trans}}</th>
+		                  <th>{{'Auteur'|trans}}</th>
+
+		                </tr>
+		              </thead>
+		              <tbody>
+
+		             {% for comment in Annonce.commentaires%}
+					<tr>
+						<td> {{comment.titre}}</td>
+						<td> {{comment.contenu}}</td>
+						<td> {{comment.date|date}}</td>
+						<td> {{comment.auteurName}}</td>
+			
+					</tr>
+					{%endfor%}
+				
+					</tbody>
+	            </table>
+
+
+
+	           	<p>
+					<a href={{ path('addComment', {'id': Annonce.id})}} class="btn btn-success">{{ 'Commenter'|trans}}</a>
+				</p>
+				
+
+ {%endblock%}

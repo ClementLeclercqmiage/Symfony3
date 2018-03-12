@@ -1,0 +1,64 @@
+{%extends '@CPCocoloc/Annonce/base.html.twig'%}
+
+
+{%block title%}
+	{{'Annonces'|trans}} 
+{%endblock%}
+
+
+ {%block body%}
+ <div class="container">
+    		<div class="row">
+    			<h3>{{ 'Liste de vos annonces'|trans}} </h3>
+    		</div>
+			<div class="row">
+			
+				<table class="table table-striped table-bordered">
+		              <thead>
+		                <tr>
+		                  <th>{{'Titre'|trans}}</th>
+		                  <th>{{'Date'|trans}}</th>
+		                  <th>{{'Categorie'|trans}}</th>
+		                  <th>{{'Ville'|trans}}</th>
+		                  <th>{{'Nombre de places'|trans}}</th>
+		                  <th>{{'Prix'|trans}}</th>
+
+		                </tr>
+		              </thead>
+		              <tbody>
+		            {%for a in Annonce%}
+					<tr>
+						<td> {{a.titre}}</td>
+						<td> {{a.datePublication|date}}</td>
+						<td> {{a.categorie}}</td>
+						<td> {{a.ville}}</td>
+						<td> {{a.nbPlace}}</td>
+						<td> {{a.prix}}</td>
+
+						<td width=250>
+							<a class="btn" href={{ path('show',{'id':a.id})}}>
+							{{'Voir'|trans}}
+							</a>&nbsp;
+							<a class="btn btn-success" href={{ path('editAnnonce',{'id':a.id})}}>
+								{{'Modifier'|trans}}
+							</a>&nbsp;
+							<a class="btn btn-danger" href={{ path('deleteAnnonce',{'id': a.id})}}>
+							{{'Supprimer'|trans}}
+							</a>
+						</td>
+						<td>
+							<a href={{ path('addComment', {'id': a})}} class="btn btn-success">{{ 'Commenter'|trans}}</a>
+						</td>
+					</tr>
+					{%endfor%}
+					
+					
+					</tbody>
+	            </table>
+
+	            <p>
+					<a href={{ path('addAnnonce')}} class="btn btn-success">{{ 'Ajouter'|trans}}</a>
+				</p>
+				
+
+ {%endblock%}

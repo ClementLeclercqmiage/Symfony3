@@ -1,0 +1,3 @@
+cp_cocoloc_homepage:
+    path:     /
+    defaults: { _controller: CPCocolocBundle:Default:index }
