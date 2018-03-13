@@ -10,4 +10,6 @@ namespace CP\CocolocBundle\Repository;
  */
 class AnnonceRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
 }

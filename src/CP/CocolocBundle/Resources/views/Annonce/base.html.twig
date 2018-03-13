@@ -36,7 +36,7 @@
           <ul class="nav navbar-nav">
             <li class="active"> <a href="{{path('accueil')}}">{{'Accueil'|trans}}</a> </li>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <li class="active"> <a href="{{path('fos_user_profile_show')}}">
+            <li class="active"> <a href="{{path('Myaccount')}}">
             {{'Mon compte'|trans}}</a> </li>
             {% endif %}
             <li class ="active"> <a href= "{{path('index')}}" >{{'Voir annonces'|trans}}</a> </li>

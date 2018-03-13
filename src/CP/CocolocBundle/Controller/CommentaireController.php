@@ -11,7 +11,7 @@ use CP\CocolocBundle\Entity\Annonce;
 
 
 /**
-*@Route ("/{_locale}/Comment")
+*@Route ("auth/{_locale}/Comment")
 */
 
 class CommentaireController extends Controller
@@ -19,7 +19,7 @@ class CommentaireController extends Controller
 
 
 	/**
-	* @Route("/user/addcomment/{id}",name="addComment")
+	* @Route("/addcomment/{id}",name="addComment")
 	* @return Symfony\Component\HttpFoundation\Response
 	* @throws \LogicException
 	*/
@@ -56,6 +56,12 @@ class CommentaireController extends Controller
 
         return $this->redirectToRoute('show',['id'=>$annonce->getId()]);
     }
+
+
+
 }
+
+
+
 
 ?>

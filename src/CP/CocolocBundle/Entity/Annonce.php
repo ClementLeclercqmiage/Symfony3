@@ -4,6 +4,7 @@ namespace CP\CocolocBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Annonce
@@ -92,10 +93,30 @@ class Annonce
     private $commentaires;
 
 
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\File(mimeTypes={ "image/jpeg" })
+     */
+
+    private $image;
+
+
 
     public function __construct(){
         $this->commentaires = new ArrayCollection();
         $this->datepublication = new \Datetime();
+    }
+
+        public function getImage()
+    {
+        return $this->image;
+    }
+
+        public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
     }
 
 

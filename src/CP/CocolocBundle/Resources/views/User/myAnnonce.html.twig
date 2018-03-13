@@ -2,7 +2,7 @@
 
 
 {%block title%}
-	{{'Annonces'|trans}} 
+	{{'Mes annonces'|trans}} 
 {%endblock%}
 
 
@@ -35,11 +35,18 @@
 						<td> {{a.nbPlace}}</td>
 						<td> {{a.prix}}</td>
 
-						<td width=250>
+						<td>
 							<a class="btn btn-success" href={{ path('show',{'id': a.id})}}>
 							{{'Voir'|trans}}
 							</a>&nbsp;
 						</td>
+						<td>
+							<a href={{ path('editAnnonce',{'id': a.id})}} class="btn btn-success">{{ 'Editer'|trans}}</a>&nbsp;
+						</td>
+						<td>
+							<a href={{path('deleteAnnonce',{'id': a.id})}} class="btn btn-danger">{{ 'Supprimer'|trans}}</a>&nbsp;
+						</td>
+
 					</tr>
 					{%endfor%}
 					
@@ -52,8 +59,7 @@
 					<a href={{ path('addAnnonce')}} class="btn btn-success">{{ 'Ajouter'|trans}}</a>
 				</p>
 				
-
  {%endblock%}
 
- {%block footer%}
+  {%block footer%}
  {%endblock%}

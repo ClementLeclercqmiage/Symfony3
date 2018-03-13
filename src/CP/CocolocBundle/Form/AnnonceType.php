@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class AnnonceType extends AbstractType
 {
@@ -21,7 +22,8 @@ class AnnonceType extends AbstractType
         ->add('categorie')
         ->add('nbplace')
         ->add('prix')
-         ->add('save',      SubmitType::class);
+        ->add('image',FileType::class, array('label' => 'Image(JPG)', 'data_class' => null))
+        ->add('save',      SubmitType::class);
     }/**
      * {@inheritdoc}
      */

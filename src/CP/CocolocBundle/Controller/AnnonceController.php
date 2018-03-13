@@ -31,7 +31,7 @@ class AnnonceController extends Controller{
 		$userManager= $this->get('fos_user.user_manager');
 		$user = $userManager->findUsers();
 
-		return $this->redirectToRoute('Annonce_index');
+		return $this->redirectToRoute('myAnnonce');
 	}
 
 
@@ -85,11 +85,12 @@ class AnnonceController extends Controller{
   				'form'=> $form->createView(),
   			]);
   		}
+  		$annonce->setDatepublication(new \Datetime());
   		 $em = $this->getDoctrine()->getManager();
   		$em->flush();
   		$this->addFlash('notice', 'Annonce modfiée');
 
-  		return $this->redirectToRoute('Annonce_index');
+  		return $this->redirectToRoute('myAnnonce');
 
 	}
 

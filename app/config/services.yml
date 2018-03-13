@@ -33,3 +33,14 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    resto.image_uploader:
+        class: CP\CocolocBundle\ImageUpload
+        arguments: ['%images_directory%']
+
+    resto.doctrine_image_listener:
+        class: CP\CocolocBundle\EventListener\ImageUploadListener
+        arguments: ['@resto.image_uploader']
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }

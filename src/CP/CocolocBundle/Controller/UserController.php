@@ -10,59 +10,50 @@ use CP\CocolocBundle\Form\AnnonceType;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use CP\UserBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use CP\CocolocBundle\Form\AnnonceSearchType;
 
 
 /**
-*@Route ("/{_locale}/home")
+*@Route ("/auth/{_locale}/account")
 */
 
-
-class HomeController extends Controller{
-
-
-
-		/**
-	* @Route ("/show/{id}",requirements ={"id": "\d+"}, name="show")
-	*/
-
-	public function showAction(Annonce $annonce){
-
-
-		return $this->render('@CPCocoloc/Home/show.html.twig',[
-			'Annonce'=> $annonce
-		]);
-
-	}
-
-
-		/**
-	* @Route("/index", name="index")
-	* @return Symfony\Component\HttpFoundation\Response
-	* @throws \LogicException
-	*/
-
-	public function indexAction(Request $request){
-		$repository = $this->getDoctrine()->getRepository(Annonce::class);
-		$listAnnonce = $repository->findAll();
-		$annonce = $this->get('knp_paginator')->paginate($listAnnonce,
-		$request->query->get('page',1),8);
-
-		return $this->render('@CPCocoloc/Home/index.html.twig',[
-			'Annonce'=> $annonce
-		]);
-	}
+class UserController extends Controller{
 
 
 			/**
-	* @Route ("/", name="accueil")
+	* @Route ("/", name="Myaccount")
 	* @return Symfony\Component\HttpFoundation\Response
 	*/
 
-	public function homeAction(Request $request){
+	public function accountAction(Request $request){
 
-		return $this->render('@CPCocoloc/Home/Acceuil.html.twig');
+		return $this->render('@CPCocoloc/User/Myaccount.html.twig'
+		);
 
 	}
+
+
+	/**
+	* @Route ("/myAnnonce", name="myAnnonce")
+	* @return Symfony\Component\HttpFoundation\Response
+	*/
+
+	public function myAnnonceAction(Request $request){
+		$userId= $this->getUser()->getId();
+		$repository = $this->getDoctrine()->getRepository(Annonce::class);
+		$listAnnonce = $repository->findBy(
+		array('auteurId' => $userId),
+		array('datepublication' => 'desc'));
+
+		$annonce = $this->get('knp_paginator')->paginate($listAnnonce,
+		$request->query->get('page',1),8);
+
+		return $this->render('@CPCocoloc/User/myAnnonce.html.twig',[
+			'Annonce'=> $annonce
+		]);
+	}
+
+
+
 }
+
 ?>
