@@ -1,0 +1,37 @@
+'Symfony is great': 'J''aime Symfony'
+Modifier: __Modifier
+'Modifier une annonce': '__Modifier une annonce'
+Ajouter: __Ajouter
+'Ajouter une annonce': '__Ajouter une annonce'
+Annonces: __Annonces
+'Liste des annonces': '__Liste des annonces'
+Titre: __Titre
+Date: __Date
+Categorie: __Categorie
+Ville: __Ville
+'Nombre de places': '__Nombre de places'
+Prix: __Prix
+Voir: __Voir
+sign_up: sign_up
+login: __login
+Bienvenue: __Bienvenue
+Acceuil: __Acceuil
+'Mon compte': '__Mon compte'
+'Voir annonces': '__Voir annonces'
+logout: __logout
+'sign in': '__sign in'
+Annonce: __Annonce
+Commenter: __Commenter
+'Ajouter un commentaire': '__Ajouter un commentaire'
+'Liste de vos annonces': '__Liste de vos annonces'
+Supprimer: __Supprimer
+Contenu: __Contenu
+Auteur: __Auteur
+'Mes annonces': '__Mes annonces'
+Editer: __Editer
+'Mes informations': '__Mes informations'
+'Retrouver ici vos informations personnelles': '__Retrouver ici vos informations personnelles'
+'Modifier mes informations': '__Modifier mes informations'
+'Modifier vos informations personnelles': '__Modifier vos informations personnelles'
+'Retrouver ici vos annonces': '__Retrouver ici vos annonces'
+Accueil: __Accueil

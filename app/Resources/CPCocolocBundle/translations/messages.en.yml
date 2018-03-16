@@ -1,24 +1,37 @@
-Annonces: __Annonces
-'Liste des annonces': '__Liste des annonces'
-Titre: __Titre
-Date: __Date
-Categorie: __Categorie
-Ville: __Ville
-'Nombre de places': '__Nombre de places'
-Prix: __Prix
-Voir: __Voir
-Ajouter: __Ajouter
-Bienvenue: __Bienvenue
-Modifier: __Modifier
-'Modifier une annonce': '__Modifier une annonce'
-'Ajouter une annonce': '__Ajouter une annonce'
-Acceuil: __Acceuil
-'Mon compte': '__Mon compte'
-'Voir annonces': '__Voir annonces'
-logout: __logout
-'sign in': '__sign in'
-Annonce: __Annonce
-Commenter: __Commenter
-'Ajouter un commentaire': '__Ajouter un commentaire'
-'Liste de vos annonces': '__Liste de vos annonces'
-Supprimer: __Supprimer
+'Symfony is great': 'J''aime Symfony'
+Modifier: Update
+Modifier une annonce: Update advert
+Ajouter: Add
+Ajouter une annonce: Add an Advert
+Annonces: Adverts
+Liste des annonces: Advert list 
+Titre: Title
+Date: Date
+Categorie: Categorie
+Ville: City
+Nombre de places: Places availlable
+Prix: Price
+Voir: Show
+sign_up: sign_up
+login: login
+Bienvenue: Welcome
+Acceuil: Home
+Mon compte: My account
+Voir annonces: Show adverts
+logout: logout
+sign in: sign in
+Annonce: Advert
+Commenter: Comment
+Ajouter un commentaire: Add a comment
+Liste de vos annonces: My adverts
+Supprimer: Delete
+Contenu: Content
+Auteur: Author
+Mes annonces: My advert
+Editer: Edit
+Mes informations: My informations
+Retrouver ici vos informations personnelles: find here your personnal informations
+Modifier mes informations: Edit your personnal informations
+Modifier vos informations personnelles: Edit your personnal informations
+Retrouver ici vos annonces: Find here your advert
+Accueil: Home

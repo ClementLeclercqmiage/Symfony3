@@ -44,7 +44,7 @@ class HomeController extends Controller{
 
 	public function indexAction(Request $request){
 		$repository = $this->getDoctrine()->getRepository(Annonce::class);
-		$listAnnonce = $repository->findAll();
+		$listAnnonce = $repository->findAll(array('datePublication' => 'desc'));
 		$annonce = $this->get('knp_paginator')->paginate($listAnnonce,
 		$request->query->get('page',1),8);
 
